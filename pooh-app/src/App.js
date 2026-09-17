@@ -127,7 +127,7 @@ function App() {
 
 export default App; */
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -141,7 +141,6 @@ function App() {
     <div className="flex min-h-screen flex-col bg-slate-50">
       <Navbar />                {/* ← เห็นทุกหน้า */}
       <main className="flex-1">
-        <BrowserRouter>
           <Routes>                {/* ← เฉพาะตรงนี้ที่สลับตาม URL */}
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
@@ -149,7 +148,6 @@ function App() {
             <Route path="/movies/:id" element={<MovieDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
       </main>
       <Footer />                {/* ← เห็นทุกหน้า */}
     </div>
